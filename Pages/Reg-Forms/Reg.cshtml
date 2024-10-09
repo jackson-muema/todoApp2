@@ -1,0 +1,49 @@
+@page
+@model RegModel
+@{
+    ViewData["Title"] = "Registration Form";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h2 class="display-5">@ViewData["Title"]</h2>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form asp-page="/Index" method="post">
+
+<div>
+    <label asp-for="Registration.FirstName">First Name: </label>
+    <input asp-for="Registration.FirstName" class="form-control">
+    <span asp-validation-for="Registration.FirstName" class="text-danger"></span>
+</div>
+
+<div>
+    <label asp-for="Registration.LastName">Last Name: </label>
+    <input asp-for="Registration.LastName" class="form-control">
+    <span asp-validation-for="Registration.LastName" class="text-danger"></span>
+</div>
+
+<div>
+    <label asp-for="Registration.PhoneNumber">Phone Number: </label>
+    <input asp-for="Registration.PhoneNumber" class="form-control">
+    <span asp-validation-for="Registration.PhoneNumber" class="text-danger"></span>
+</div>
+
+<div>
+    <label asp-for="Registration.EmailAddress">Email Address: </label>
+    <input asp-for="Registration.EmailAddress" class="form-control" />
+    <span asp-validation-for="Registration.EmailAddress" class="text-danger"></span>
+</div>
+
+<button type="submit" class="btn btn-primary">Register</button>
+
+</form>
+
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
+    <a class="btn btn-primary" asp-area="" asp-page="/Reg-Forms/registered">Registered</a>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
